@@ -1,0 +1,67 @@
+{% extends "layout.jinja2" %}
+
+{% block pagestyles %}
+  <link href="{{ url_for('static', filename='dist/css/main.css') }}"
+        rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.typekit.net/sus7rlu.css">
+{% endblock %}
+
+{% block content %}
+
+    <div id="bg">
+        </div>
+    <div id="main">
+
+        <div id="logo">Logo</div>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Tutorials</li>
+                <li>About</li>
+                <li> Contact</li>
+            </ul>
+        </nav>
+        <div id="sign-nav">
+            <div id="signin">
+                Login
+            </div>
+            <div id="signup">
+                Sign up
+            </div>
+        </div>
+
+        <div id="main-content">
+               <div id="big-title">
+                 <h1> Valuación automatizada de inmuebles </h1>
+
+               </div>
+               <div id="desc">
+               <p> En cuestión de segundos nuestro modelo te permite conocer
+                   la valuación catastral de tu propiedad. Además, al
+                   utilizar nuestra aplicación obtendrás información
+                   detallada sobre la propiedad y el sector en el que se
+                   encuentra </p>
+                </div>
+                <div class="btn">
+                    Get started
+                </div>
+        </div>
+        <div id="social-icons">
+            <link href="{{ url_for('static', filename='dist/css/main.css') }}"
+        rel="stylesheet" type="text/css">
+
+                <img src="{{ url_for('static', filename='/dist/img/google.png') }}"
+                alt="G" height="36"
+                     width="36">
+                <img src="{{ url_for('static', filename='/dist/img/facebook.png') }}" alt="f" height="36" width="36">
+                <img src="{{ url_for('static', filename='/dist/img/instagram.png') }}" alt="i" height="36" width="36">
+                <img src="{{ url_for('static', filename='/dist/img/twitter.png') }}" alt="t" height="36" width="36">
+                <img src="{{ url_for('static', filename='/dist/img/linkedin.png') }}" alt="l" height="36" width="36">
+
+            </div>
+
+
+
+    </div>
+
+{% endblock %}
