@@ -12,12 +12,24 @@ main_bp = Blueprint(
 
 
 @main_bp.route('/', methods=['GET'])
+def index():
+    """First view without login"""
+    return render_template(
+        'index.jinja2',
+        title='Flask-app',
+        template='index-template',
+        current_user=current_user,
+        body="You are now logged in!"
+    )
+
+
+@main_bp.route('/home/', methods=['GET'])
 @login_required
 def dashboard():
     """Logged-in User Dashboard."""
     return render_template(
-        'index.jinja2',
-        title='Flask-Login Tutorial.',
+        'dashboard.jinja2',
+        title='Flask-app',
         template='dashboard-template',
         current_user=current_user,
         body="You are now logged in!"

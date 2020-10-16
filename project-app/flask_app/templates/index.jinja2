@@ -12,25 +12,32 @@
         </div>
     <div id="main">
 
-        <div id="logo">Logo</div>
+        <div class="logo">
+        <img src="{{ url_for('static', filename='dist/img/logo.png') }}"
+            alt="logo"/>
+        </div>
         <nav>
             <ul>
                 <li>Home</li>
                 <li>Tutorials</li>
                 <li>About</li>
-                <li> Contact</li>
+                <li>Contact</li>
             </ul>
         </nav>
         <div id="sign-nav">
-            <div id="signin">
+            <div id="signin" onclick="window.location.href={{ url_for('main_bp.dashboard') }}">
                 Login
             </div>
+            <a style="text-decoration: none; color: inherit;"
+               href="{{ url_for('auth_bp.signup') }}">
             <div id="signup">
                 Sign up
             </div>
+            </a>
         </div>
 
         <div id="main-content">
+
                <div id="big-title">
                  <h1> Valuación automatizada de inmuebles </h1>
 
@@ -42,9 +49,11 @@
                    detallada sobre la propiedad y el sector en el que se
                    encuentra </p>
                 </div>
-                <div class="btn">
-                    Get started
-                </div>
+                <a style="text-decoration: none" href="{{ url_for('main_bp.dashboard') }}">
+                    <div class="btn">
+                        Get started
+                    </div>
+                </a>
         </div>
         <div id="social-icons">
             <link href="{{ url_for('static', filename='dist/css/main.css') }}"
