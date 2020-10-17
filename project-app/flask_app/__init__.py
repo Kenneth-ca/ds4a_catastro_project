@@ -33,4 +33,8 @@ def create_app():
         if app.config['FLASK_ENV'] == 'development':
             compile_static_assets(app)
 
+        # Connect with dash_app
+        from .dash_app.dashboard_app import create_dashboard
+        app = create_dashboard(app)
+
         return app
