@@ -7,23 +7,23 @@ from werkzeug.security import generate_password_hash, check_password_hash
 class User(UserMixin, db.Model):
 	"""User account model."""
 
-	__tablename__ = 'flasklogin-users'
+	__tablename__ = 'account'
 	id = db.Column(
 		db.Integer,
 		primary_key=True
 	)
-	name = db.Column(
+	user = db.Column(
 		db.String(100),
 		nullable=False,
 		unique=False
 	)
 	email = db.Column(
-		db.String(40),
+		db.String(255),
 		unique=True,
 		nullable=False
 	)
 	password = db.Column(
-		db.String(200),
+		db.String(255),
 		primary_key=False,
 		unique=False,
 		nullable=False
@@ -38,7 +38,7 @@ class User(UserMixin, db.Model):
         db.DateTime,
         index=False,
         unique=False,
-        nullable=True
+        nullable=False
     )
 	last_login = db.Column(
         db.DateTime,

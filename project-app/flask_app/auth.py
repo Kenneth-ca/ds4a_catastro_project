@@ -4,6 +4,7 @@ from flask_login import current_user, login_user
 from .forms import LoginForm, SignupForm
 from .models import db, User
 from .import login_manager
+import datetime
 
 
 # Blueprint Configuration
@@ -27,11 +28,12 @@ def signup():
         existing_user = User.query.filter_by(email=form.email.data).first()
         if existing_user is None:
             user = User(
-                name=form.name.data,
+                user=form.name.data,
                 email=form.email.data,
                 website=form.website.data
             )
             user.set_password(form.password.data)
+            user.created_on=datetime.datetime.now()
             db.session.add(user)
             db.session.commit()  # Create new user
             login_user(user)  # Log in as newly created user
